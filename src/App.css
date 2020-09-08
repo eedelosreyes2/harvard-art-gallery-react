@@ -25,3 +25,8 @@ body {
     overflow: auto;
     width: 100vw; */
 }
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid white;
+}

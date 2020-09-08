@@ -48,7 +48,7 @@ export class Header extends Component {
                     // backgroundColor: "yellow",
                     display: "flex",
                     flexDirection: "column",
-                    // minHeight: "150px",
+                    height: "100%",
                     position: "fixed",
                     top: 0,
                     width: "95%",
@@ -83,14 +83,15 @@ export class Header extends Component {
                             style={{
                                 border: "1px solid white",
                                 display: "inline-block",
-                                height: "20px",
-                                marginRight: "10px",
+                                height: "15px",
+                                marginRight: "15px",
                                 width: "20px",
                             }}
                         />
                         <span
                             style={{
                                 border: "1px solid white",
+                                borderRadius: "50%",
                                 display: "inline-block",
                                 height: "10px",
                                 width: "10px",
@@ -105,9 +106,11 @@ export class Header extends Component {
                         alignItems: "center",
                         display: "flex",
                         height: "50px",
+                        justifyContent: "space-between",
                         width: "100%",
                     }}
                 >
+                    {/* Tabs */}
                     <div
                         style={{
                             display: "flex",
@@ -117,11 +120,28 @@ export class Header extends Component {
                         {this.state.tabs.map((tab) => {
                             const { id, title, list } = tab;
                             return (
-                                <div key={id} style={{ paddingRight: "12px" }}>
+                                <div key={id} style={{ paddingRight: "25px" }}>
                                     {title}
                                 </div>
                             );
                         })}
+                        About
+                    </div>
+
+                    {/* N Works and Searchbar */}
+                    <div style={{ alignItems: "center", display: "flex" }}>
+                        <input
+                            placeholder="Search by keyword, title, artist, or gallery"
+                            style={{
+                                background: "transparent",
+                                border: "none",
+                                color: "white",
+                                height: "20px",
+                                outline: "none",
+                                textAlign: "right",
+                                width: "250px",
+                            }}
+                        />
                     </div>
                 </div>
             </div>

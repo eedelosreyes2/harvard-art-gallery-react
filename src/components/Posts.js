@@ -32,7 +32,10 @@ export class Posts extends Component {
         return (
             <div
                 style={{
-                    // backgroundColor: "red",
+                    alignContent: "center",
+                    backgroundColor: "red",
+                    display: "flex",
+                    flexWrap: "wrap",
                     height: "100%",
                     width: "95%",
                 }}
