@@ -15,7 +15,7 @@ export class Posts extends Component {
         axios
             .get(
                 URL +
-                    "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&page=1"
+                    "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&page=10"
             )
             .then(
                 (res) => {
@@ -30,19 +30,23 @@ export class Posts extends Component {
 
     render() {
         return (
+            // Grid
             <div
                 style={{
                     alignContent: "center",
-                    backgroundColor: "red",
-                    display: "flex",
+                    // backgroundColor: "red",
+                    display: "grid",
                     flexWrap: "wrap",
                     height: "100%",
+                    justifyContent: "center",
+                    position: "absolute",
+                    top: "170px",
                     width: "95%",
                 }}
             >
                 {this.state.posts.map((post) => (
-                    <div key={post.id}>
-                        {post.title}
+                    <div key={post.id} style={{ padding: "15px" }}>
+                        {/* {post.title} */}
                         <img
                             src={post.primaryimageurl}
                             style={{ width: 250 }}
