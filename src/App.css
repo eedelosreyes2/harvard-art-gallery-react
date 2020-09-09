@@ -5,6 +5,11 @@ body {
     overflow: hidden;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .App {
     align-items: center;
     background-color: black;
@@ -16,14 +21,14 @@ body {
     margin: auto;
     min-height: 100vh;
     padding: 10px;
+    position: relative;
 
     /* No Scroll-bounce */
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: auto;
+    overflow: scroll;
     /* width: 100vw; */
 }
 

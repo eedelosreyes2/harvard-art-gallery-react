@@ -15,11 +15,11 @@ export class Posts extends Component {
         axios
             .get(
                 URL +
-                    "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&page=10"
+                    "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&size=100"
             )
             .then(
                 (res) => {
-                    console.log(res.data.records);
+                    // console.log(res.data.records);
                     this.setState({ posts: res.data.records });
                 },
                 (err) => {
@@ -32,27 +32,38 @@ export class Posts extends Component {
         return (
             // Grid
             <div
+                className="grid"
                 style={{
-                    alignContent: "center",
                     // backgroundColor: "red",
                     display: "grid",
-                    flexWrap: "wrap",
-                    height: "100%",
-                    justifyContent: "center",
+                    // gridAutoRows: "250px",
+                    gridGap: "10px",
+                    gridTemplateColumns:
+                        "repeat(auto-fill, minmax(240px, 1fr))",
+                    justifyItems: "center",
+                    paddingBottom: "30px",
                     position: "absolute",
-                    top: "170px",
-                    width: "95%",
+                    top: "120px",
+                    width: "85%",
+                    zIndex: 0,
                 }}
             >
-                {this.state.posts.map((post) => (
-                    <div key={post.id} style={{ padding: "15px" }}>
-                        {/* {post.title} */}
-                        <img
-                            src={post.primaryimageurl}
-                            style={{ width: 250 }}
-                        />
-                    </div>
-                ))}
+                {this.state.posts.map((post) =>
+                    post.primaryimageurl ? (
+                        <div
+                            key={post.id}
+                            className="content"
+                            style={{ padding: "15px" }}
+                        >
+                            {/* {post.title} */}
+                            <img
+                                src={post.primaryimageurl}
+                                alt=""
+                                style={{ width: 250 }}
+                            />
+                        </div>
+                    ) : null
+                )}
             </div>
         );
     }
