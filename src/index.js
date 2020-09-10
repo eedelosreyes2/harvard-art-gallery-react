@@ -5,47 +5,17 @@ import App from "./App";
 
 // Redux
 import { createStore } from "redux";
+import allReducers from "./reducers";
+import { Provider } from "react-redux";
 
-// STORE
-
-// ACTIONS
-const getWorks = () => {
-    return {
-        type: "GETWORKS",
-    };
-};
-const getList = () => {
-    return {
-        type: "GETLIST",
-    };
-};
-
-// REDUCERS
-const works = (state = [], action) => {
-    switch (action.type) {
-        case "GETWORKS":
-            return []; // get data from api
-    }
-};
-const list = (state = [], action) => {
-    switch (action.type) {
-        case "GETLIST":
-            return []; // get list from api
-    }
-};
-
-// STORE
-let store = createStore(works);
-
-// Display store to console
-store.subscribe(() => console.log(store.getState()));
-
-// DISPATCH
-store.dispatch(getWorks());
+const store = createStore(
+    allReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <App />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById("root")
 );

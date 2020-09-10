@@ -124,7 +124,11 @@ export class Header extends Component {
                     }}
                 >
                     {/* Harvard Art Museums Logo */}
-                    <a href="https://www.harvardartmuseums.org" target="_blank">
+                    <a
+                        href="https://www.harvardartmuseums.org"
+                        target="__blank"
+                        rel="noopener noreferrer"
+                    >
                         <h1
                             style={{
                                 display: "inline-block",
@@ -154,6 +158,7 @@ export class Header extends Component {
                         <a
                             href="https://github.com/eedelosreyes2/harvard-art-gallery-react"
                             target="_blank"
+                            rel="noopener noreferrer"
                             style={{ marginRight: "15px" }}
                         >
                             About

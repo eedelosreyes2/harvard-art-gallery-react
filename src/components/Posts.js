@@ -19,8 +19,8 @@ export class Posts extends Component {
         axios
             .get(
                 URL +
-                    // "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&page=1&size=100"
-                    "/classification?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&size=100"
+                    "/object?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&page=1&size=100"
+                // "/classification?apikey=9b7b63e1-aa03-4f5d-8d56-f2c58a6a4efe&size=100"
             )
             .then(
                 (res) => {
@@ -60,7 +60,6 @@ export class Posts extends Component {
                             className="content"
                             style={{ padding: "15px" }}
                         >
-                            {/* {post.title} */}
                             <img
                                 src={post.primaryimageurl}
                                 alt=""
