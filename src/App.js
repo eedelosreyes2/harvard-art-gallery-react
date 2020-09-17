@@ -2,49 +2,50 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
-import Posts from "./components/Posts";
+import Works from "./components/Works";
 // import Footer from "./components/Footer";
 
-export class App extends Component {
-    state = {
-        windowWidth: 0,
-        windowHeight: 0,
-    };
+import { WorksProvider } from "./components/WorksContext";
 
-    componentDidMount = () => {
-        this.updateDimensions();
-        window.addEventListener("resize", this.updateDimensions);
-    };
+const App = () => {
+    // state = {
+    //     windowWidth: 0,
+    //     windowHeight: 0,
+    // };
 
-    componentWillUnmount = () => {
-        window.removeEventListener("resize", this.updateDimensions);
-    };
+    // componentDidMount = () => {
+    //     this.updateDimensions();
+    //     window.addEventListener("resize", this.updateDimensions);
+    // };
 
-    updateDimensions = () => {
-        let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-        let windowHeight =
-            typeof window !== "undefined" ? window.innerHeight : 0;
+    // componentWillUnmount = () => {
+    //     window.removeEventListener("resize", this.updateDimensions);
+    // };
 
-        this.setState({ windowWidth, windowHeight });
-    };
+    // updateDimensions = () => {
+    //     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    //     let windowHeight =
+    //         typeof window !== "undefined" ? window.innerHeight : 0;
 
-    render() {
-        return (
+    //     this.setState({ windowWidth, windowHeight });
+    // };
+
+    return (
+        <WorksProvider>
             <div className="App">
                 <Header />
-                <Posts />
+                <Works />
                 {/* <Footer /> */}
             </div>
-        );
-    }
-}
+        </WorksProvider>
+    );
+};
 
 export default App;
 
 /* TODO:
 - Masonry grid
-- context api 
-- posts transitions on device change
-- 
-
+- context api
+- Works transitions on device change
+- Footer
 */
