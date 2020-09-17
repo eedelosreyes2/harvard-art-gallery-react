@@ -80,9 +80,6 @@ export class Header extends Component {
 
         if (showLists && id === currentId) {
             showLists = false;
-        } else if (showLists) {
-            showLists = true;
-            currentId = id;
         } else {
             showLists = true;
             currentId = id;
@@ -92,15 +89,6 @@ export class Header extends Component {
     };
 
     render() {
-        var toPathUrl = "/";
-        var toPath = "Cart";
-
-        if (window.location.pathname === "/") {
-            toPathUrl = "/cart";
-        } else if (window.location.pathname === "/cart") {
-            toPath = "Home";
-        }
-
         return (
             <div
                 style={{
@@ -150,11 +138,8 @@ export class Header extends Component {
                         />
                     </a>
 
-                    {/* Cart, About, and Mode */}
+                    {/* About and Mode */}
                     <div style={{ alignItems: "center", display: "flex" }}>
-                        <a href={toPathUrl} style={{ marginRight: "15px" }}>
-                            {toPath}
-                        </a>
                         <a
                             href="https://github.com/eedelosreyes2/harvard-art-gallery-react"
                             target="_blank"
