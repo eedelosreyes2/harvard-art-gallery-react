@@ -4,12 +4,10 @@ body {
     height: 100%;
     overflow: hidden;
 }
-
 a {
     color: white;
     text-decoration: none;
 }
-
 .App {
     align-items: center;
     background-color: black;
@@ -30,9 +28,4 @@ a {
     right: 0;
     overflow: scroll;
     /* width: 100vw; */
-}
-
-input[type="text"] {
-    border: none;
-    border-bottom: 1px solid white;
 }
