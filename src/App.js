@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./css/App.css";
 
 import Header from "./components/Header";
@@ -48,4 +48,6 @@ export default App;
 - context api
 - Works transitions on device change
 - Footer
+- remove all inline css
+- sort
 */

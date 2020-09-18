@@ -1,0 +1,16 @@
+.grid {
+    display: grid;
+    grid-auto-rows: 250px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    justify-items: center;
+    padding-bottom: 30px;
+    position: absolute;
+    top: 120px;
+    width: 85%;
+    z-index: 0;
+}
+
+img {
+    width: 250px;
+}
