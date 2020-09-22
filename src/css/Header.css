@@ -1,5 +1,4 @@
 .header {
-    background-color: black;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -26,7 +25,7 @@
     font-size: 30px;
 }
 .logo .diag-line {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid; /* white by default */
     display: inline-block;
     transform: rotate(-45deg) translateX(-10px) translateY(-4px);
     -webkit-transform: rotate(-45deg) translateX(-10px) translateY(-4px);

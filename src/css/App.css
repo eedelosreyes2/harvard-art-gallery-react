@@ -10,8 +10,6 @@ a {
 }
 .App {
     align-items: center;
-    background-color: black;
-    color: white;
     display: flex;
     flex-direction: column;
     font-size: 12px;

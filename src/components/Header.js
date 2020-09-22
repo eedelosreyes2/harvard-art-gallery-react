@@ -87,6 +87,8 @@ export class Header extends Component {
     };
 
     render() {
+        const mode = this.props.mode;
+
         return (
             <div className="header">
                 {/* Above line */}
@@ -94,6 +96,7 @@ export class Header extends Component {
                     {/* Harvard Art Museums Logo */}
                     <a
                         className="logo"
+                        style={mode}
                         href="https://www.harvardartmuseums.org"
                         target="__blank"
                         rel="noopener noreferrer"
@@ -107,13 +110,14 @@ export class Header extends Component {
                         <li>
                             <a
                                 href="https://github.com/eedelosreyes2/harvard-art-gallery-react"
+                                style={mode}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 About
                             </a>
                         </li>
-                        <li>Mode</li>
+                        <li onClick={() => this.props.onToggleMode()}>Mode</li>
                     </ul>
                 </div>
 

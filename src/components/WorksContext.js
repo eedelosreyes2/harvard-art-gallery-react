@@ -1,8 +1,9 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
-export const WorksContext = createContext();
 
 const URL = "https://api.harvardartmuseums.org";
+
+export const WorksContext = createContext();
 
 export const WorksProvider = (props) => {
     const [works, setWorks] = useState([]);

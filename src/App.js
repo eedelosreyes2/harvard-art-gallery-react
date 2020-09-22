@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./css/App.css";
 
 import Header from "./components/Header";
 import Works from "./components/Works";
 // import Footer from "./components/Footer";
 
+import { ModesContext } from "./components/ModesContext";
 import { WorksProvider } from "./components/WorksContext";
 
 const App = () => {
@@ -29,15 +30,21 @@ const App = () => {
 
     //     this.setState({ windowWidth, windowHeight });
     // };
+    const modes = useContext(ModesContext);
+    const [mode, setMode] = useState(modes.dark);
+
+    var toggleMode = () => {
+        setMode(mode === modes.dark ? modes.light : modes.dark);
+    };
 
     return (
-        <WorksProvider>
-            <div className="App">
-                <Header />
+        <div className="App" style={mode}>
+            <Header mode={mode} onToggleMode={() => toggleMode()} />
+            <WorksProvider>
                 <Works />
-                {/* <Footer /> */}
-            </div>
-        </WorksProvider>
+            </WorksProvider>
+            {/* <Footer /> */}
+        </div>
     );
 };
 
@@ -45,7 +52,6 @@ export default App;
 
 /* TODO:
 - Masonry grid
-- context api
 - Works transitions on device change
 - Footer
 - remove all inline css
