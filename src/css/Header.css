@@ -81,6 +81,21 @@
     border-bottom: 1px solid white;
 }
 
+.arrow-wrapper {
+    display: flex;
+    height: 22.5px;
+    justify-content: center;
+}
+.arrow {
+    border: solid;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
 .list {
     background-color: rebeccapurple;
     height: 40px;

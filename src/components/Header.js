@@ -86,11 +86,25 @@ export class Header extends Component {
         this.setState({ showLists, currentId, currentList });
     };
 
+    handleSearchDropDown = () => {};
+
     render() {
         const mode = this.props.mode;
+        const width = this.props.dimensions.windowWidth;
+
+        // Searchbar dynamic styling
+        var placeholder = "Search by keyword, title, artist, or gallery";
+        var inputStyle = { ...mode };
+
+        if (width <= 950) {
+            placeholder = "Search";
+            inputStyle.width = "90px";
+        } else if (width <= 768) {
+            // ipad size
+        }
 
         return (
-            <div className="header">
+            <div className="header" style={mode}>
                 {/* Above line */}
                 <div className="upper">
                     {/* Harvard Art Museums Logo */}
@@ -122,28 +136,37 @@ export class Header extends Component {
                 </div>
 
                 {/* Below line */}
-                <div className="lower">
-                    {/* Tabs */}
-                    <div className="tabs">
-                        {this.state.tabs.map((tab) => {
-                            const { id, title, list } = tab;
-                            return (
-                                <div
-                                    className="tab"
-                                    key={id}
-                                    onClick={() => this.handleDropDown(id)}
-                                >
-                                    {title}
-                                </div>
-                            );
-                        })}
+                {width <= 768 ? (
+                    <div className="lower arrow-wrapper">
+                        <i className="arrow down" />
                     </div>
+                ) : (
+                    <div className="lower">
+                        {/* Tabs */}
+                        <div className="tabs">
+                            {this.state.tabs.map((tab) => {
+                                const { id, title, list } = tab;
+                                return (
+                                    <div
+                                        className="tab"
+                                        key={id}
+                                        onClick={() => this.handleDropDown(id)}
+                                    >
+                                        {title}
+                                    </div>
+                                );
+                            })}
+                        </div>
 
-                    {/* Searchbar */}
-                    <div className="search-bar">
-                        <input placeholder="Search by keyword, title, artist, or gallery" />
+                        {/* Searchbar */}
+                        <div className="search-bar">
+                            <input
+                                placeholder={placeholder}
+                                style={inputStyle}
+                            />
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* Lists */}
                 {this.state.showLists ? (

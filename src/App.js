@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./css/App.css";
 
 import Header from "./components/Header";
@@ -9,29 +9,29 @@ import { ModesContext } from "./components/ModesContext";
 import { WorksProvider } from "./components/WorksContext";
 
 const App = () => {
-    // state = {
-    //     windowWidth: 0,
-    //     windowHeight: 0,
-    // };
-
-    // componentDidMount = () => {
-    //     this.updateDimensions();
-    //     window.addEventListener("resize", this.updateDimensions);
-    // };
-
-    // componentWillUnmount = () => {
-    //     window.removeEventListener("resize", this.updateDimensions);
-    // };
-
-    // updateDimensions = () => {
-    //     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-    //     let windowHeight =
-    //         typeof window !== "undefined" ? window.innerHeight : 0;
-
-    //     this.setState({ windowWidth, windowHeight });
-    // };
+    const [dimensions, setDimensions] = useState({
+        windowWidth: 0,
+        windowHeight: 0,
+    });
     const modes = useContext(ModesContext);
     const [mode, setMode] = useState(modes.dark);
+
+    useEffect(() => {
+        updateDimensions();
+        window.addEventListener("resize", updateDimensions);
+
+        return () => {
+            window.removeEventListener("resize", updateDimensions);
+        };
+    }, []);
+
+    var updateDimensions = () => {
+        let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+        let windowHeight =
+            typeof window !== "undefined" ? window.innerHeight : 0;
+
+        setDimensions({ windowWidth, windowHeight });
+    };
 
     var toggleMode = () => {
         setMode(mode === modes.dark ? modes.light : modes.dark);
@@ -39,7 +39,11 @@ const App = () => {
 
     return (
         <div className="App" style={mode}>
-            <Header mode={mode} onToggleMode={() => toggleMode()} />
+            <Header
+                dimensions={dimensions}
+                mode={mode}
+                onToggleMode={() => toggleMode()}
+            />
             <WorksProvider>
                 <Works />
             </WorksProvider>
