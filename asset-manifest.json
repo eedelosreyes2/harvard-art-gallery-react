@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/harvard-art-gallery-react/static/css/main.7845349e.chunk.css",
+    "main.js": "/harvard-art-gallery-react/static/js/main.3fda52d1.chunk.js",
+    "main.js.map": "/harvard-art-gallery-react/static/js/main.3fda52d1.chunk.js.map",
+    "runtime-main.js": "/harvard-art-gallery-react/static/js/runtime-main.cb74d310.js",
+    "runtime-main.js.map": "/harvard-art-gallery-react/static/js/runtime-main.cb74d310.js.map",
+    "static/js/2.9d3a936f.chunk.js": "/harvard-art-gallery-react/static/js/2.9d3a936f.chunk.js",
+    "static/js/2.9d3a936f.chunk.js.map": "/harvard-art-gallery-react/static/js/2.9d3a936f.chunk.js.map",
+    "index.html": "/harvard-art-gallery-react/index.html",
+    "precache-manifest.a1cf08f5f09d55f9138f38c1a991fd7a.js": "/harvard-art-gallery-react/precache-manifest.a1cf08f5f09d55f9138f38c1a991fd7a.js",
+    "service-worker.js": "/harvard-art-gallery-react/service-worker.js",
+    "static/css/main.7845349e.chunk.css.map": "/harvard-art-gallery-react/static/css/main.7845349e.chunk.css.map",
+    "static/js/2.9d3a936f.chunk.js.LICENSE.txt": "/harvard-art-gallery-react/static/js/2.9d3a936f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb74d310.js",
+    "static/js/2.9d3a936f.chunk.js",
+    "static/css/main.7845349e.chunk.css",
+    "static/js/main.3fda52d1.chunk.js"
+  ]
+}
