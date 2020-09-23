@@ -56,8 +56,12 @@ export default App;
 
 /* TODO:
 - Masonry grid
-- Works transitions on device change
+- Works transitions animations on device change
 - Footer
-- remove all inline css
+    - Move About to Footer
 - sort
+- 95vw for mobile
+- minimal toggle mode button animation
+- Search dropdown
+- Mode Lists/Search dropdown to a reusable function
 */
