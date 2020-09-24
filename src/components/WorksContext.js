@@ -23,18 +23,16 @@ export const WorksProvider = (props) => {
                             JSON.stringify(res.data.records)
                         );
                         setWorks(res.data.records);
-                        // console.log(JSON.stringify(res.data.records));
                     },
                     (err) => {
                         console.log(err);
                     }
                 );
         }
-        // If works already in localStorage, load them
+        // If works already in localStorage, set them
         else {
             setWorks(JSON.parse(localStorage.getItem("works")));
         }
-        // localStorage.clear();
     }, []);
 
     return (
